@@ -1,5 +1,5 @@
 (function(angular) {
- angular.module('workjawnApp', ['characterServiceModule', 'currentCharacterServiceModule', 'characterModule', 'expando', 'characterSelect', 'currentCharacterSelected', 'someFilters', 'drag'])
+ angular.module('workjawnApp', ['characterServiceModule', 'currentCharacterServiceModule','createMatchServiceModule', 'characterModule', 'expando', 'characterSelect', 'currentCharacterSelected', 'someFilters', 'drag'])
 
 
 

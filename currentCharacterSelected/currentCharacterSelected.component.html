@@ -41,5 +41,14 @@ dfdfdf
 
 <h2> {{$ctrl.characterSelectedVs}} </h2>
 
+
+
 <hr>
+<button ng-click="$ctrl.createMatch( $ctrl.characterSelected , $ctrl.characterSelectedVs )">Set match</button>
+
+<h2> {{$ctrl.currentMatch}} </h2>
+
+
+<h2> {{$ctrl.characterSelected.characterSelected.id + "and " + $ctrl.characterSelectedVs.characterSelectedVs.id}} </h2>
+
 <!-- <button ng-click="$ctrl.setCharacter( $ctrl.currentCharacterList )">Set character</button> -->

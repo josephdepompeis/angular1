@@ -13,7 +13,7 @@
       // controllerAs: 'characterList'
     });
 
-    function currentCharacterList ( currentCharacterService ) {
+    function currentCharacterList ( currentCharacterService, createMatchService ) {
       currentCharacterService.getCurrentCharacters().then ( (data) => {
         this.currentCharacterList = data;
       });
@@ -22,6 +22,28 @@
       this.characterSelected = currentCharacterService.characterSelected;
       this.characterSelectedVs = currentCharacterService.characterSelectedVs;
 
+
+      // this.characterSelectedVs = "";
+      // this.setCharacterVs = function(characterSelectedVs) {
+      //     currentCharacterService.setCharacterVs(characterSelectedVs);
+      //     this.characterSelectedVs = characterSelectedVs
+      // };
+
+
+
+      this.currentMatch = createMatchService.currentMatch;
+
+      // this.currentMatch = "replace me~";
+      this.createMatch = function(characterSelected , characterSelectedVs) {
+          createMatchService.createMatch(characterSelected , characterSelectedVs);
+          this.currentMatch = createMatchService.currentMatch;
+      };
+
+ //      this.newMatch = function(this.characterSelected , this.characterSelectedVs)
+ // {
+ //   return characterSelected.characterSelected.id + "and " + $ctrl.characterSelectedVs.characterSelectedVs.id
+ //
+ // };
 
 
       // currentCharacterService.text
