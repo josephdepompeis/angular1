@@ -1,0 +1,12 @@
+<div class='panel panel-default'>
+  <div class="panel-heading">
+    <button ng-click="ec.show = !ec.show"></button>
+    {{ec.heading}}
+    <!-- <img ng-src="https://placekitten.com/{{ec.character.length}}/{{ec.character.length}}" class=""></a> -->
+  </div>
+  <div class="panel-body" ng-if="ec.show">
+    <!-- Sometimes people use the attribute form just to avoid repetition. -->
+    <div ng-transclude></div>
+    <!-- {{ec.character}} -->
+  </div>
+</div>

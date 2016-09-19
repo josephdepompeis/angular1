@@ -1,0 +1,32 @@
+
+
+
+<img ng-src="https://placekitten.com/{{$ctrl.character.id * 100}}/100" class="" make-draggable></a>
+
+
+<div class='panel panel-default'>
+  <div class="panel-heading">
+    <button ng-click="$ctrl.show = !$ctrl.show"></button>
+    Make {{$ctrl.heading}} Your Chosen Warrior
+  </div>
+  <div class="panel-body" ng-if="$ctrl.show">
+    <div ng-transclude></div>
+    <!-- {{}} -->
+    ::task complete when you hit button below::
+
+
+    {{$ctrl.text}}
+
+    <h2>text: {{$ctrl.character}} </h2>
+
+    <!-- {{$ctrl.currenttextList}} -->
+
+    <!-- <button ng-click="$ctrl.settext( $ctrl.text )">Set text</button> -->
+    <!-- <button ng-click="$ctrl.textList()">Set text</button> -->
+
+
+    <button ng-click="$ctrl.setCharacter( $ctrl.character )">Set character</button>
+
+
+  </div>
+</div>

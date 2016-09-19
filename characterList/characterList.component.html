@@ -1,0 +1,7 @@
+<div ng-repeat="character in $ctrl.characterList">
+  <expando heading="{{character.name | uppercase}}" character="{{character}}">
+    <character-selector heading="{{character.name | uppercase}}" character="character">
+    </character-selector>
+</expando>
+
+</div>

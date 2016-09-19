@@ -1,0 +1,38 @@
+<html lang="en" ng-app="workjawnApp">
+    <head>
+        <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8">
+        <title>Joes Stuff</title>
+        <script src="../lib/angular/angular.js"></script>
+        <script src="character.service.js"></script>
+        <script src="currentCharacter.service.js"></script>
+        <script src="characterList/characterList.component.js"></script>
+        <script src="app.js"></script>
+        <script src="expando/expando.js"></script>
+        <script src="characterSelect/characterSelect.component.js"></script>
+        <script src="currentCharacterSelected/currentCharacterSelected.component.js"></script>
+        <script src="filters.js"></script>
+        <script src="drag.js"></script>
+
+        <p>Secret Number: {{3 | badCrypto}}</p>
+
+
+
+
+    </head>
+
+    <body>
+<!-- hi
+{{ 1 + 1}} -->
+<current-character-selected>
+</current-character-selected>
+
+
+<character-list>
+</character-list>
+
+
+    </body>
+
+</html>
