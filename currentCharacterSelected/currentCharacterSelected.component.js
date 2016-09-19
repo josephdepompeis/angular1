@@ -19,7 +19,8 @@
       });
 
 
-      this.text = currentCharacterService.text;
+      this.characterSelected = currentCharacterService.characterSelected;
+      this.characterSelectedVs = currentCharacterService.characterSelectedVs;
 
 
 

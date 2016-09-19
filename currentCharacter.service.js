@@ -62,12 +62,24 @@
           //     this.text.text = text;
           //     console.log('text', this.text)
           // };
-          this.text = {text:"unchosen"};
-          this.setCharacter = function(text) {
-              this.text.text = text;
-              console.log('text', this.text);
+          this.characterSelected = {characterSelected:"unchosen"};
+          this.setCharacter = function(characterSelected) {
+              this.characterSelected.characterSelected = characterSelected;
+              console.log('characterSelected', this.characterSelected);
               // var sendCharacter = $http.post('http://localhost:3000/characters.json', text);
           };
+
+
+          this.characterSelectedVs = {characterSelectedVs:"unchosen"};
+          this.setCharacterVs = function(characterSelectedVs) {
+              this.characterSelectedVs.characterSelectedVs = characterSelectedVs;
+              console.log('characterSelectedVs', this.characterSelectedVs);
+              // var sendCharacter = $http.post('http://localhost:3000/characters.json', text);
+          };
+
+
+
+
 
 
         });

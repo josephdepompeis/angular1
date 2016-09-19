@@ -19,10 +19,17 @@
 
 
       var sc = this;
-      this.text = "";
-      this.setCharacter = function(text) {
-          currentCharacterService.setCharacter(text);
-          this.text = text
+      this.characterSelected = "";
+      this.setCharacter = function(characterSelected) {
+          currentCharacterService.setCharacter(characterSelected);
+          this.characterSelected = characterSelected
+      };
+
+      var sc = this;
+      this.characterSelectedVs = "";
+      this.setCharacterVs = function(characterSelectedVs) {
+          currentCharacterService.setCharacterVs(characterSelectedVs);
+          this.characterSelectedVs = characterSelectedVs
       };
     }
 

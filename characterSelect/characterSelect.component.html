@@ -15,9 +15,9 @@
     ::task complete when you hit button below::
 
 
-    {{$ctrl.text}}
+    <!-- {{$ctrl.text}} -->
 
-    <h2>text: {{$ctrl.character}} </h2>
+    <h2> {{$ctrl.character}} </h2>
 
     <!-- {{$ctrl.currenttextList}} -->
 
@@ -26,6 +26,7 @@
 
 
     <button ng-click="$ctrl.setCharacter( $ctrl.character )">Set character</button>
+    <button ng-click="$ctrl.setCharacterVs( $ctrl.character )">Set characterVs</button>
 
 
   </div>
