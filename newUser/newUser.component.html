@@ -1,0 +1,37 @@
+
+<div class="container-fluid">
+  <form name="fc.userForm" novalidate>
+    <div>
+       Name:
+      <input name="uFirstName" ng-model="fc.name.first" required>
+      <div style="color: red" ng-show="(fc.userForm.$submitted || fc.userForm.uFirstName.$touched) && fc.userForm.uFirstName.$error.required">
+        Please enter a first name.
+      </div>
+    </div>
+    <div>
+      Password
+      <input name="uPassword" type="password" ng-model="fc.password" required>
+      <div style="color: red" ng-show="fc.userForm.uPassword.$touched && fc.userForm.uPassword.$error.required">
+        Please enter a password.
+      </div>
+    </div>
+    <div>
+      Email:
+      <input name="uEmail" type="email" ng-model="fc.email" required ng-minlength="5" ng-maxlength="20">
+      <div ng-show="(fc.userForm.$submitted || fc.userForm.uEmail.$touched)">
+        <div ng-messages="fc.userForm.uEmail.$error" style="color:maroon" role="alert">
+          <div ng-message="required">Please enter an email.</div>
+          <div ng-message="email">Please enter a valid email address.</div>
+          <div ng-message="minlength">Your email is too short.</div>
+          <div ng-message="maxlength">Your email is too long</div>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" ng-disabled="fc.userForm.$invalid" type="submit" ng-click="fc.submit(fc.userForm)">Submit</button>
+  </form>
+  <expando>
+    <pre ng-bind="fc.userForm | json"></pre>
+</expando>
+
+</div>

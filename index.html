@@ -5,10 +5,14 @@
         <meta charset="utf-8">
         <title>Joes Stuff</title>
         <script src="../lib/angular/angular.js"></script>
+        <script src="../lib/angular-route/angular-route.js"></script>
+        <script src="../lib/angular-messages/angular-messages.js"></script>
+
+
         <script src="character.service.js"></script>
         <script src="currentCharacter.service.js"></script>
         <script src="createMatch.service.js"></script>
-
+        <script src="createUser.service.js"></script>
         <script src="characterList/characterList.component.js"></script>
         <script src="app.js"></script>
         <script src="expando/expando.js"></script>
@@ -16,24 +20,27 @@
         <script src="currentCharacterSelected/currentCharacterSelected.component.js"></script>
         <script src="filters.js"></script>
         <script src="drag.js"></script>
+        <script src="dashboard/dashboard.component.js"></script>
 
-        <p>Secret Number: {{3 | badCrypto}}</p>
-
+        <script src="login/login.component.js"></script>
+        <script src="newUser/newUser.component.js"></script>
 
 
 
     </head>
+    <p>Secret Number: {{3 | badCrypto}}</p>
 
     <body>
 <!-- hi
 {{ 1 + 1}} -->
-<current-character-selected>
+<!-- <current-character-selected>
 </current-character-selected>
 
 
 <character-list>
-</character-list>
-
+</character-list> -->
+<ng-view>
+</ng-view>
 
     </body>
 

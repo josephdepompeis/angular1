@@ -10,33 +10,28 @@
         character: '=character'
       },
       controller: currentCharacterList
-      // controllerAs: 'characterList'
     });
 
-    function currentCharacterList ( currentCharacterService, createMatchService ) {
-      currentCharacterService.getCurrentCharacters().then ( (data) => {
+    function currentCharacterList ( currentCharacterService, createMatchService, characterService ) {
+      characterService.getCharacters().then ( (data) => {
         this.currentCharacterList = data;
       });
 
-
       this.characterSelected = currentCharacterService.characterSelected;
       this.characterSelectedVs = currentCharacterService.characterSelectedVs;
-
-
-      // this.characterSelectedVs = "";
-      // this.setCharacterVs = function(characterSelectedVs) {
-      //     currentCharacterService.setCharacterVs(characterSelectedVs);
-      //     this.characterSelectedVs = characterSelectedVs
-      // };
-
-
-
       this.currentMatch = createMatchService.currentMatch;
+      this.createdMatch = createMatchService.createdMatch;
 
       // this.currentMatch = "replace me~";
       this.createMatch = function(characterSelected , characterSelectedVs) {
-          createMatchService.createMatch(characterSelected , characterSelectedVs);
+          createMatchService.createMatch(characterSelected , characterSelectedVs).then ( (data) => {
+            this.createdMatch = createMatchService.createdMatch;
+          });
+
           this.currentMatch = createMatchService.currentMatch;
+
+          // this.createdMatch = createMatchService.createdMatch;
+
       };
 
  //      this.newMatch = function(this.characterSelected , this.characterSelectedVs)

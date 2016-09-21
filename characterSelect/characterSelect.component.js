@@ -12,8 +12,8 @@
       controller: characterSelectController
     });
 
-    function characterSelectController ( currentCharacterService ) {
-      currentCharacterService.getCurrentCharacters().then ( (data) => {
+    function characterSelectController ( currentCharacterService, characterService ) {
+      characterService.getCharacters().then ( (data) => {
         this.currentCharacterList = data;
       });
 
