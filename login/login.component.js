@@ -8,15 +8,25 @@
         controllerAs: 'fc'
     });
 
+    function FormController( userLoginService ) {
 
-    function FormController() {
-        var vm = this;
-
-        vm.submit = function (form) {
+        this.submit = function (form) {
           console.log("yeahbitch")
+          this.loggedInUser = userLoginService.loggedInUser;
           if (form.$valid) {
-            console.log("ssyeahbitch")
-            console.log(form.uEmail)
+            console.log(form)
+            // console.log(form.uFirstName.$$lastCommittedViewValue);
+            console.log(form.uPassword.$$lastCommittedViewValue);
+            console.log(form.uEmail.$$lastCommittedViewValue);
+            this.formResults = {
+                "password": form.uPassword.$$lastCommittedViewValue
+              , "email":  form.uEmail.$$lastCommittedViewValue
+            }
+            console.log(this.formResults);
+            userLoginService.logInUser( this.formResults ).then ( (data) => {
+            this.loggedInUser = userLoginService.loggedInUser;
+            });
+            this.loggedInUser = userLoginService.loggedInUser;
           }
         };
     }

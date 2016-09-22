@@ -1,15 +1,7 @@
-<!-- <current-character-selected>
-</current-character-selected>
 
-
-<character-list>
-</character-list> -->
-<p>login shit bitch</p>
 <div class="container-fluid">
-  <p><a href="https://docs.angularjs.org/guide/forms">Form docs</a></p>
-
   <form name="fc.userForm" novalidate>
-    <div>
+    <!-- <div>
       First name:
       <input name="uFirstName" ng-model="fc.name.first" required>
       <div style="color: red" ng-show="(fc.userForm.$submitted || fc.userForm.uFirstName.$touched) && fc.userForm.uFirstName.$error.required">
@@ -22,7 +14,7 @@
       <div style="color: red" ng-show="fc.userForm.uLastName.$touched && fc.userForm.uLastName.$error.required">
         Please enter a last name.
       </div>
-    </div>
+    </div> -->
     <div>
       Email:
       <input name="uEmail" type="email" ng-model="fc.email" required ng-minlength="5" ng-maxlength="20">
@@ -37,6 +29,13 @@
       </div>
     </div>
     <div>
+      Password:
+      <input name="uPassword" type="password" ng-model="fc.password" required>
+      <div style="color: red" ng-show="fc.userForm.uPassword.$touched && fc.userForm.uPassword.$error.required">
+        Please enter a password.
+      </div>
+    </div>
+    <!-- <div>
       Age:
       <input name="uAge" type="number" ng-model="fc.age" min="18" required>
       <div style="color: red" ng-show="fc.userForm.uAge.$touched && fc.userForm.uAge.$error.required">
@@ -45,7 +44,7 @@
       <div style="color: red" ng-show="fc.userForm.uAge.$touched && fc.userForm.uAge.$error.min">
         Must be at least 18.
       </div>
-    </div>
+    </div> -->
     <button class="btn btn-primary" ng-disabled="fc.userForm.$invalid" type="submit" ng-click="fc.submit(fc.userForm)">Submit</button>
   </form>
   <pre ng-bind="fc.userForm | json"></pre>

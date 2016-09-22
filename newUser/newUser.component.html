@@ -1,5 +1,6 @@
 
-<div class="container-fluid">
+
+<div class="container-fluid" ng-show="!fc.userForm.$submitted">
   <form name="fc.userForm" novalidate>
     <div>
        Name:
@@ -33,5 +34,15 @@
   <expando>
     <pre ng-bind="fc.userForm | json"></pre>
 </expando>
+</div>
 
+
+<div class="container-fluid" ng-show="fc.userForm.$submitted">
+<center>
+  <h3>
+    Character Select-1000
+    <br><br><br><br><br>
+    <a href="#/login">login</a>
+  </h3>
+</center>
 </div>

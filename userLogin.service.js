@@ -2,16 +2,16 @@
         angular.module('userLoginServiceModule', [])
         .service('userLoginService', function($http) {
 
-          this.createdUser = {uncreated:"uncreated"};
+          this.loggedInUser = {uncreated:"uncreated"};
 
-          this.createUser = function( formResults ) {
+          this.logInUser = function( formResults ) {
             console.log('currentMatch', formResults);
-            var sendUser = $http.post('http://localhost:3000/users.json', formResults).then((response) =>
+            var sendUser = $http.post('http://localhost:3000/sessions/login', formResults).then((response) =>
             { console.log('response', response.data);
-            this.createdUser = response;
+            this.loggedInUser = response;
             } );
             return sendUser.then((response) => {
-              console.log('created jawn', this.createdUser);
+              console.log('created jawn', this.loggedInUser);
               return response;
             })
           };
