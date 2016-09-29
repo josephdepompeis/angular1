@@ -2,7 +2,7 @@
         angular.module('userLoginServiceModule', [])
         .service('userLoginService', function($http) {
 
-          this.loggedInUser = {uncreated:"uncreated"};
+          this.loggedInUser = {notloggedIn:"notloggedIn"};
 
           this.logInUser = function( formResults ) {
             console.log('currentMatch', formResults);

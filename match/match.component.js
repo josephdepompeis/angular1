@@ -1,15 +1,24 @@
 (function(angular) {
 
 
-    var loginModule = angular.module('matchModule', [])
-    loginModule.component('match', {
+    var matchModule = angular.module('matchModule', [])
+    matchModule.component('match', {
         templateUrl: "match/match.component.html",
         controller: matchController,
         controllerAs: 'mc'
     });
 
-    function matchController( userLoginService ) {
+    function matchController( userLoginService, createMatchService, matchIndexService  ) {
       this.loggedInUser = userLoginService.loggedInUser;
+      this.createdMatch = createMatchService.createdMatch;
+
+      matchIndexService.getMatches().then ( (data) => {
+        this.matchList = data;
+      });
+
+
+
+
         //
         // this.submit = function (form) {
         //   console.log("yeahbitch")

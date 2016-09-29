@@ -1,9 +1,9 @@
 (function(angular) {
- angular.module('workjawnApp', ['characterServiceModule', 'currentCharacterServiceModule','createMatchServiceModule','createUserServiceModule', 'characterModule', 'expando', 'characterSelect', 'currentCharacterSelected', 'someFilters', 'drag', 'ngRoute','ngMessages', 'dashboardModule', 'loginModule',  'newUserModule', 'userLoginServiceModule', 'matchModule'])
+ angular.module('workjawnApp', ['characterServiceModule', 'currentCharacterServiceModule','createMatchServiceModule','createUserServiceModule', 'characterModule', 'expando', 'characterSelect', 'currentCharacterSelected', 'someFilters', 'drag', 'ngRoute','ngMessages', 'dashboardModule', 'loginModule',  'newUserModule', 'userLoginServiceModule', 'matchModule', 'matchIndexServiceModule'])
  .config(function($routeProvider){
      $routeProvider
          .when('/welcome',{
-             template: '<center><h3>Character Select-1000<br><br><br><br><a href="#/dashboard">enter</a><br><a href="#/login">login</a><br><a href="#/newUser">newUser</a></h3></center>'
+             template: '<center><h3>Character Select-1000<br><br><br><br><a href="#/dashboard">enter</a><br><a href="#/login">login</a><br><a href="#/newUser">newUser</a><br><a href="#/match">match</a><br></h3></center>'
          })
          .when('/dashboard',{
              template: '<dashboard></dashboard>'
