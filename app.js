@@ -1,5 +1,5 @@
 (function(angular) {
- angular.module('workjawnApp', ['characterServiceModule', 'currentCharacterServiceModule','createMatchServiceModule','createUserServiceModule', 'characterModule', 'expando', 'characterSelect', 'currentCharacterSelected', 'someFilters', 'drag', 'ngRoute','ngMessages', 'dashboardModule', 'loginModule',  'newUserModule', 'userLoginServiceModule'])
+ angular.module('workjawnApp', ['characterServiceModule', 'currentCharacterServiceModule','createMatchServiceModule','createUserServiceModule', 'characterModule', 'expando', 'characterSelect', 'currentCharacterSelected', 'someFilters', 'drag', 'ngRoute','ngMessages', 'dashboardModule', 'loginModule',  'newUserModule', 'userLoginServiceModule', 'matchModule'])
  .config(function($routeProvider){
      $routeProvider
          .when('/welcome',{
@@ -13,6 +13,9 @@
          })
          .when('/newUser',{
              template: '<new-user></new-user>'
+         })
+         .when('/match',{
+             template: '<match></match>'
          })
          .otherwise({
              redirectTo: '/welcome'

@@ -9,13 +9,12 @@
     });
 
     function FormController( userLoginService ) {
+      this.loggedInUser = userLoginService.loggedInUser;
 
         this.submit = function (form) {
           console.log("yeahbitch")
-          this.loggedInUser = userLoginService.loggedInUser;
           if (form.$valid) {
             console.log(form)
-            // console.log(form.uFirstName.$$lastCommittedViewValue);
             console.log(form.uPassword.$$lastCommittedViewValue);
             console.log(form.uEmail.$$lastCommittedViewValue);
             this.formResults = {

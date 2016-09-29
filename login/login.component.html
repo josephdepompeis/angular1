@@ -1,5 +1,8 @@
 
-<div class="container-fluid">
+<div class="container-fluid" ng-if='fc.loggedInUser.data == nil'>
+<!-- {uncreated:"uncreaxted"} -->
+
+<!-- <div class="container-fluid"> -->
   <form name="fc.userForm" novalidate>
     <!-- <div>
       First name:
@@ -46,6 +49,34 @@
       </div>
     </div> -->
     <button class="btn btn-primary" ng-disabled="fc.userForm.$invalid" type="submit" ng-click="fc.submit(fc.userForm)">Submit</button>
+
+    <div class="container-fluid" ng-if="fc.userForm.$submitted && fc.loggedInUser.data == nil">
+      something wasn't correct. Try Again.
+    </div>
+
+
   </form>
   <pre ng-bind="fc.userForm | json"></pre>
+</div>
+<!-- {{ fc.loggedInUser}}
+{{ fc.loggedInUser.data.id}}
+
+dfdsf -->
+
+
+<div class="container-fluid" ng-if='fc.loggedInUser.data != nil'>
+<center>
+  <!-- <h3>
+    Character Select-1000
+    <br><br><br><br><br> -->
+    <!-- <a href="#/login">login</a> -->
+    {{ fc.loggedInUser.data.id}}
+
+    <a href="#/dashboard">Continue to Dash</a>
+
+
+<!-- {{ fc.loggedInUser}} -->
+
+  </h3>
+</center>
 </div>

@@ -1,18 +1,16 @@
 (function(angular) {
 
 
-    var dashboardModule = angular.module('dashboardModule', [])
-
-    dashboardModule.component('dashboard', {
-        templateUrl: "dashboard/dashboard.component.html",
-        controller: dashboardController,
-        controllerAs: 'dc'
+    var loginModule = angular.module('matchModule', [])
+    loginModule.component('match', {
+        templateUrl: "match/match.component.html",
+        controller: matchController,
+        controllerAs: 'mc'
     });
 
-
-    function dashboardController(  ) {
-      // this.loggedInUser = userLoginService.loggedInUser;
-
+    function matchController( userLoginService ) {
+      this.loggedInUser = userLoginService.loggedInUser;
+        //
         // this.submit = function (form) {
         //   console.log("yeahbitch")
         //   if (form.$valid) {
@@ -31,6 +29,8 @@
         //   }
         // };
     }
+
+
 
 
 
