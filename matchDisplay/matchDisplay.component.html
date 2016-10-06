@@ -1,11 +1,17 @@
 {{ mc.loggedInUser.data.id}}
 {{ mc.loggedInUser.data}}
+{{ mc.currentMatch}}
 
-{{ mc.createdMatch}}
-<!-- {{ mc.matchList}} -->
+<!-- {{ mc.createdMatch}} -->
+<!-- {{ mc.matchData}} -->
+<!-- {{ mc.currentMatch}} -->
 
 
 
+
+
+
+<!--
 <form class="form-inline">
   <input ng-model="playing_as_query" type="text"
     placeholder="Filter by" autofocus>
@@ -16,7 +22,5 @@
 </form>
 <ul ng-repeat="match in mc.matchList | filter: { playing_as: playing_as_query, playing_against: playing_against_query, user_id: mc.loggedInUser.data.id }| orderBy: 'name' ">
   <li>{{match}}</li>
-  <button ng-click="mc.matchDisplayLink(match)">Continue to Match Display</button>
 </ul>
-</div>
-</body>
+</div> -->

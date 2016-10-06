@@ -13,7 +13,6 @@
               // var sendCharacter = $http.post('http://localhost:3000/characters.json', text);
           };
 
-
           this.setCharacterVs = function(characterSelectedVs) {
               this.characterSelectedVs.characterSelectedVs = characterSelectedVs;
               console.log('characterSelectedVs', this.characterSelectedVs);

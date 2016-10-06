@@ -50,16 +50,53 @@ dfdfdf
 {{$ctrl.loggedInUser.data.id}}
 
 <hr>
-<button ng-click="$ctrl.createMatch( $ctrl.characterSelected , $ctrl.characterSelectedVs, $ctrl.loggedInUser.data.id )">Set match</button>
+
+
+
+
+<!-- <div class="container-fluid" ng-if=""> -->
+
+<!-- </div> -->
+
+
+<!-- <button ng-click="$ctrl.createMatch( $ctrl.characterSelected , $ctrl.characterSelectedVs, $ctrl.loggedInUser.data.id )">Set match</button> -->
 
 <h2> {{$ctrl.currentMatch}} </h2>
 <h2> {{$ctrl.characterSelected.characterSelected.id + "and " + $ctrl.characterSelectedVs.characterSelectedVs.id}} </h2>
 
 
-<!-- <div class="panel-body" ng-if="$ctrl.createdMatch"> -->
-{{$ctrl.createdMatch}}
-<!-- boner james -->
+<!-- {{$ctrl.createdMatch}} -->
+
+
+<div class="container-fluid" ng-if="$ctrl.characterSelected.characterSelected.id && $ctrl.characterSelectedVs.characterSelectedVs.id">
+
+  <ul test-id="matchlist" ng-repeat="match in $ctrl.matchList | filter: { playing_as: $ctrl.characterSelected.characterSelected.id , playing_against: $ctrl.characterSelectedVs.characterSelectedVs.id }| orderBy: 'name' ">
+    <li>{{match}}</li>
+    <button ng-click="$ctrl.matchDisplayLink(match)">Continue to Match Display</button>
+  </ul>
+
+
 </div>
+
+
+
+<div ng-controller="ExampleController">
+  <select ng-model="selection" ng-options="item for item in items">
+  </select>
+  <code>selection={{selection}}</code>
+  <hr/>
+  <div class="animate-switch-container"
+    ng-switch on="selection">
+      <div class="animate-switch" ng-switch-when="settings">Settings Div</div>
+      <div class="animate-switch" ng-switch-when="home">Home Span</div>
+      <div class="animate-switch" ng-switch-default>default</div>
+  </div>
+</div>
+
+
+
+
+<!-- </div> -->
 
 
 

@@ -9,6 +9,12 @@
     });
 
     function FormController( userLoginService ) {
+
+      this.welcomeLink = function(){
+        window.location = "#/welcome";
+      }
+
+
       this.loggedInUser = userLoginService.loggedInUser;
 
         this.submit = function (form) {

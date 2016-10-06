@@ -13,10 +13,20 @@
       controller: currentCharacterList
     });
 
-    function currentCharacterList ( currentCharacterService, createMatchService, characterService, userLoginService ) {
+    function currentCharacterList ( currentCharacterService, createMatchService, characterService, userLoginService, matchIndexService ) {
       characterService.getCharacters().then ( (data) => {
         this.currentCharacterList = data;
       });
+
+      matchIndexService.getMatches().then ( (data) => {
+        this.matchList = data;
+      });
+
+
+      this.matchDisplayLink = function(match){
+        matchIndexService.setMatch(match);
+        window.location = "#/matchdisplay";
+      };
 
 
       this.characterSelected = currentCharacterService.characterSelected;
@@ -24,45 +34,14 @@
       this.currentMatch = createMatchService.currentMatch;
       this.createdMatch = createMatchService.createdMatch;
       this.loggedInUser = userLoginService.loggedInUser;
-// cons
 
-      // console.log(this.loggedInUser);
-
-
-
-
-      // this.currentMatch = "replace me~";
       this.createMatch = function(characterSelected , characterSelectedVs, loggedInUser) {
           createMatchService.createMatch(characterSelected , characterSelectedVs, loggedInUser).then ( (data) => {
             this.createdMatch = createMatchService.createdMatch;
           });
 
           this.currentMatch = createMatchService.currentMatch;
-
-          // this.createdMatch = createMatchService.createdMatch;
-
       };
-
- //      this.newMatch = function(this.characterSelected , this.characterSelectedVs)
- // {
- //   return characterSelected.characterSelected.id + "and " + $ctrl.characterSelectedVs.characterSelectedVs.id
- //
- // };
-
-
-      // currentCharacterService.text
-
-      //
-      // var sc = this;
-      // this.text = "";
-      // this.setText = function(text) {
-      //     currentCharacterService.setText(text);
-      //     this.text = text
-      // };
-
-
-
-
 
     }
 
