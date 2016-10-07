@@ -21,7 +21,7 @@
              template: '<match-display></match-display>'
          })
          .otherwise({
-             redirectTo: '/welcome'
+             redirectTo: '/login'
          })
  })
 

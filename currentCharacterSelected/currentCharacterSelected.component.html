@@ -26,28 +26,21 @@ sdf -->
 <!-- <div ng-repeat="character in $ctrl.currentCharacterList">
 dfdfdf
 </div> -->
-
-<div>Character 1:</div>
-<!-- {{$ctrl.currentCharacterList[0]}} -->
-<h2> {{$ctrl.characterSelected}} </h2>
-
-
-<div>Character 2:</div>
-<!-- {{$ctrl.currentCharacterList[1]}} -->
-
-<!-- {{$ctrl.currentCharacterList[0]}} -->
-
-<!-- {{$ctrl.currentCharacterService}} -->
-
-<h2> {{$ctrl.characterSelectedVs}} </h2>
-
-
 {{$ctrl.loggedInUser}}
+<hr>
+<div>Playing As:</div>
+<div> {{$ctrl.characterSelected.characterSelected.name}} </div>
 
-{{$ctrl.loggedInUser.data}}
+
+<div>Playing Against:</div>
+<div> {{ $ctrl.characterSelectedVs.characterSelectedVs.name }} </div>
+
+
+
+<!-- {{$ctrl.loggedInUser.data}} -->
 
 <!-- $ctrl.loggedInUser.data.id -->
-{{$ctrl.loggedInUser.data.id}}
+<!-- {{$ctrl.loggedInUser.data.id}} -->
 
 <hr>
 
@@ -61,37 +54,48 @@ dfdfdf
 
 <!-- <button ng-click="$ctrl.createMatch( $ctrl.characterSelected , $ctrl.characterSelectedVs, $ctrl.loggedInUser.data.id )">Set match</button> -->
 
-<h2> {{$ctrl.currentMatch}} </h2>
-<h2> {{$ctrl.characterSelected.characterSelected.id + "and " + $ctrl.characterSelectedVs.characterSelectedVs.id}} </h2>
+<!-- <h2> {{$ctrl.currentMatch}} </h2> -->
+<div class="container-fluid" ng-if="$ctrl.characterSelected.characterSelected.id || $ctrl.characterSelectedVs.characterSelectedVs.id">
 
+<h2> {{$ctrl.characterSelected.characterSelected.name + " Vs " + $ctrl.characterSelectedVs.characterSelectedVs.name}} </h2>
+
+</div>
 
 <!-- {{$ctrl.createdMatch}} -->
 
 
-<div class="container-fluid" ng-if="$ctrl.characterSelected.characterSelected.id && $ctrl.characterSelectedVs.characterSelectedVs.id">
-
+<!-- <div class="container-fluid" ng-if="$ctrl.characterSelected.characterSelected.id && $ctrl.characterSelectedVs.characterSelectedVs.id">
   <ul test-id="matchlist" ng-repeat="match in $ctrl.matchList | filter: { playing_as: $ctrl.characterSelected.characterSelected.id , playing_against: $ctrl.characterSelectedVs.characterSelectedVs.id }| orderBy: 'name' ">
     <li>{{match}}</li>
     <button ng-click="$ctrl.matchDisplayLink(match)">Continue to Match Display</button>
   </ul>
+</div>
+ -->
 
 
+
+
+<div class="container-fluid" ng-if="$ctrl.characterSelected.characterSelected.id && $ctrl.characterSelectedVs.characterSelectedVs.id">
+  <ul>
+    <li ng-repeat="match in $ctrl.matchList | filter: { playing_as: $ctrl.characterSelected.characterSelected.id , playing_against: $ctrl.characterSelectedVs.characterSelectedVs.id }| orderBy: 'name' ">
+      {{match}}
+      <button ng-click="$ctrl.matchDisplayLink(match)">Continue to Match Display
+      </button>
+    </li>
+    <li class="no-items">This match has never been noted before!
+     <button ng-click="$ctrl.createMatch( $ctrl.characterSelected , $ctrl.characterSelectedVs, $ctrl.loggedInUser.data.id )">Set match
+     </button>
+   </li>
+  </ul>
 </div>
 
 
-
-<div ng-controller="ExampleController">
-  <select ng-model="selection" ng-options="item for item in items">
-  </select>
-  <code>selection={{selection}}</code>
-  <hr/>
-  <div class="animate-switch-container"
-    ng-switch on="selection">
-      <div class="animate-switch" ng-switch-when="settings">Settings Div</div>
-      <div class="animate-switch" ng-switch-when="home">Home Span</div>
-      <div class="animate-switch" ng-switch-default>default</div>
-  </div>
-</div>
+<!--
+<ul>
+     <li data-ng-repeat="item in values | filter:filterIds()"> <code>#{{item.id}}</code> Item</li>
+     <li class="no-items">There are no matching items.</li>
+ </ul>
+ -->
 
 
 

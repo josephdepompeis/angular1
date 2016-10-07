@@ -38,6 +38,7 @@
       this.createMatch = function(characterSelected , characterSelectedVs, loggedInUser) {
           createMatchService.createMatch(characterSelected , characterSelectedVs, loggedInUser).then ( (data) => {
             this.createdMatch = createMatchService.createdMatch;
+            this.matchDisplayLink(this.createdMatch);
           });
 
           this.currentMatch = createMatchService.currentMatch;

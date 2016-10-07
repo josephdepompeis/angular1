@@ -10,8 +10,8 @@
 
     function FormController( userLoginService ) {
 
-      this.welcomeLink = function(){
-        window.location = "#/welcome";
+      this.dashboardLink = function(){
+        window.location = "#/dashboard";
       }
 
 
