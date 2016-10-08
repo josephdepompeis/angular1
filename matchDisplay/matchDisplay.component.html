@@ -2,13 +2,18 @@
 {{ mc.loggedInUser.data}}
 {{ mc.currentMatch}}
 
+
+
+{{mc.matchNotes}}
 <!-- {{ mc.createdMatch}} -->
 <!-- {{ mc.matchData}} -->
 <!-- {{ mc.currentMatch}} -->
 
 
+{{ mc.currentMatch.id}}
+{{ mc.currentMatch}}
 
-
+<!-- mc.currentMatch -->
 
 
 <!--
@@ -19,8 +24,9 @@
     <input ng-model="playing_against_query" type="text"
       placeholder="Filter by" autofocus>
 
-</form>
-<ul ng-repeat="match in mc.matchList | filter: { playing_as: playing_as_query, playing_against: playing_against_query, user_id: mc.loggedInUser.data.id }| orderBy: 'name' ">
-  <li>{{match}}</li>
+</form> -->
+<ul ng-repeat="note in mc.matchNotes | filter: { match_id: mc.currentMatch.id}| orderBy: 'order' ">
+<!-- <ul ng-repeat="note in mc.matchNotes | filter: { playing_as: playing_as_query, playing_against: playing_against_query, user_id: mc.loggedInUser.data.id }| orderBy: 'name' "> -->
+  <li>{{note}}</li>
 </ul>
-</div> -->
+</div>

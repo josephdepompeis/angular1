@@ -8,15 +8,19 @@
         controllerAs: 'mc'
     });
 
-    function matchDisplayController( userLoginService, createMatchService, matchIndexService  ) {
+    function matchDisplayController( userLoginService, createMatchService, matchIndexService, matchNotesService  ) {
       this.loggedInUser = userLoginService.loggedInUser;
       this.createdMatch = createMatchService.createdMatch;
       this.currentMatch = matchIndexService.currentMatch;
+      this.matchNotes = {};
 
-      // matchIndexService.getMatches().then ( (data) => {
-      //   this.matchList = data;
-      // });
-      //
+
+
+
+      matchNotesService.getMatchNotes().then ( (data) => {
+        this.matchNotes = data;
+      });
+
 
 
 
