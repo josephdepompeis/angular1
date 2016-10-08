@@ -10,14 +10,6 @@
               return response.data;
             })
           };
-          // 
-          // this.setMatch = function(match) {
-          //   this.currentMatch = match;
-          //   console.log('currentMatch', this.currentMatch);
-          //
-          // };
-
-
 
         });
 })(window.angular);

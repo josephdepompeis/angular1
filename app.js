@@ -1,6 +1,7 @@
 (function(angular) {
     angular.module('workjawnApp', [
-            'characterServiceModule', 'currentCharacterServiceModule', 'createMatchServiceModule', 'createUserServiceModule', 'characterModule', 'expando', 'characterSelect', 'currentCharacterSelected', 'someFilters', 'drag', 'ngRoute', 'ngMessages', 'dashboardModule', 'loginModule', 'newUserModule', 'userLoginServiceModule', 'matchModule', 'matchIndexServiceModule', 'matchDisplayModule', 'matchNotesServiceModule'
+            'characterServiceModule', 'currentCharacterServiceModule', 'createMatchServiceModule', 'createUserServiceModule', 'characterModule', 'expando', 'characterSelect', 'currentCharacterSelected', 'someFilters', 'drag', 'ngRoute', 'ngMessages', 'dashboardModule', 'loginModule', 'newUserModule', 'userLoginServiceModule', 'matchModule', 'matchIndexServiceModule', 'matchDisplayModule', 'matchNotesServiceModule',
+            'newNoteModule'
         ])
         .config(function($routeProvider) {
             $routeProvider
