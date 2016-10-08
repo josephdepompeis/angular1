@@ -1,23 +1,8 @@
 
-<div class="container-fluid" ng-if='fc.loggedInUser.data == nil'>
-<!-- {uncreated:"uncreaxted"} -->
+<div class="container-fluid" ng-if='fc.latestNote.data == nil'>
 
-<!-- <div class="container-fluid"> -->
   <form name="fc.userForm" novalidate>
-    <!-- <div>
-      First name:
-      <input name="uFirstName" ng-model="fc.name.first" required>
-      <div style="color: red" ng-show="(fc.userForm.$submitted || fc.userForm.uFirstName.$touched) && fc.userForm.uFirstName.$error.required">
-        Please enter a first name.
-      </div>
-    </div>
-    <div>
-      Last name:
-      <input name="uLastName" ng-model="fc.name.last" required>
-      <div style="color: red" ng-show="fc.userForm.uLastName.$touched && fc.userForm.uLastName.$error.required">
-        Please enter a last name.
-      </div>
-    </div> -->
+
     <div>
       Email:
       <input name="uEmail" type="email" ng-model="fc.email" required ng-minlength="5" ng-maxlength="20">
@@ -38,50 +23,27 @@
         Please enter a password.
       </div>
     </div>
-    <!-- <div>
-      Age:
-      <input name="uAge" type="number" ng-model="fc.age" min="18" required>
-      <div style="color: red" ng-show="fc.userForm.uAge.$touched && fc.userForm.uAge.$error.required">
-        Please enter your age.
-      </div>
-      <div style="color: red" ng-show="fc.userForm.uAge.$touched && fc.userForm.uAge.$error.min">
-        Must be at least 18.
-      </div>
-    </div> -->
+
     <button class="btn btn-primary" ng-disabled="fc.userForm.$invalid" type="submit" ng-click="fc.submit(fc.userForm)">Submit</button>
 
-    <div class="container-fluid" ng-if="fc.userForm.$submitted && fc.loggedInUser.data == nil">
+    <div class="container-fluid" ng-if="fc.userForm.$submitted && fc.latestNote.data == nil">
       something wasn't correct. Try Again.
     </div>
 
 
   </form>
-  <pre ng-bind="fc.userForm | json"></pre>
+  <!-- <pre ng-bind="fc.userForm | json"></pre> -->
 </div>
-<!-- {{ fc.loggedInUser}}
-{{ fc.loggedInUser.data.id}}
-
-dfdsf -->
 
 
-<div class="container-fluid" ng-if='fc.loggedInUser.data != nil'>
+
+<div class="container-fluid" ng-if='fc.latestNote.data != nil'>
 <center>
-  <!-- <h3>
-    Character Select-1000
-    <br><br><br><br><br> -->
-    <!-- <a href="#/login">login</a> -->
     Success!
-    {{ fc.loggedInUser.data.id}}
-    <!-- {{ }} -->
-    <!--  -->
+    {{ fc.latestNote.data.id}}
 
-    <!-- <div ng-click='fc.goNext("/matchdisplay")'>next page</div> -->
     <button ng-click="fc.dashboardLink()">Continue to Welcome</button>
 
-    <!-- <a href="#/dashboard">Continue to Dash</a> -->
-
-
-<!-- {{ fc.loggedInUser}} -->
 
   </h3>
 </center>

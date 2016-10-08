@@ -4,18 +4,18 @@
     var newNoteModule = angular.module('newNoteModule', [])
       newNoteModule.component('newNote', {
         templateUrl: "newNote/newNote.component.html",
-        controller: newNoteController,
+        controller: FormController,
         controllerAs: 'fc'
     });
 
-    function newNoteController( userLoginService ) {
+    function FormController( newNoteService ) {
 
       this.dashboardLink = function(){
         window.location = "#/dashboard";
       }
 
 
-      this.loggedInUser = userLoginService.loggedInUser;
+      this.latestNote = newNoteService.latestNote;
 
         this.submit = function (form) {
           console.log("yeahbitch")
@@ -24,14 +24,14 @@
             console.log(form.uPassword.$$lastCommittedViewValue);
             console.log(form.uEmail.$$lastCommittedViewValue);
             this.formResults = {
-                "password": form.uPassword.$$lastCommittedViewValue
-              , "email":  form.uEmail.$$lastCommittedViewValue
+                "match_id": form.uPassword.$$lastCommittedViewValue
+              , "name":  form.uEmail.$$lastCommittedViewValue
             }
             console.log(this.formResults);
-            userLoginService.logInUser( this.formResults ).then ( (data) => {
-            this.loggedInUser = userLoginService.loggedInUser;
+            newNoteService.submitNewNote( this.formResults ).then ( (data) => {
+            this.latestNote = newNoteService.latestNote;
             });
-            this.loggedInUser = userLoginService.loggedInUser;
+            this.latestNote = newNoteService.latestNote;
           }
         };
     }
