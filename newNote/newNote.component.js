@@ -28,10 +28,10 @@
           if (form.$valid) {
             console.log(form)
             console.log(form.uPassword.$$lastCommittedViewValue);
-            console.log(form.uEmail.$$lastCommittedViewValue);
+            console.log(form.uNote.$$lastCommittedViewValue);
             this.formResults = {
                 "match_id": form.uPassword.$$lastCommittedViewValue
-              , "name":  form.uEmail.$$lastCommittedViewValue
+              , "name":  form.uNote.$$lastCommittedViewValue
             }
             console.log(this.formResults);
             newNoteService.submitNewNote( this.formResults ).then ( (data) => {

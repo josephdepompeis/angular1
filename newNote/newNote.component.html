@@ -5,12 +5,12 @@
 
     <div>
       Email:
-      <input name="uEmail" type="email" ng-model="fc.email" required ng-minlength="5" ng-maxlength="20">
-      <div ng-show="(fc.userForm.$submitted || fc.userForm.uEmail.$touched)">
-        <div ng-messages="fc.userForm.uEmail.$error" style="color:maroon" role="alert">
+      <input name="uNote" ng-model="fc.note" required ng-minlength="1" ng-maxlength="20">
+      <div ng-show="(fc.userForm.$submitted || fc.userForm.uNote.$touched)">
+        <div ng-messages="fc.userForm.uNote.$error" style="color:maroon" role="alert">
           <!-- Only one message is displayed, order matters -->
-          <div ng-message="required">Please enter an email.</div>
-          <div ng-message="email">Please enter a valid email address.</div>
+          <div ng-message="required">Please enter an note.</div>
+          <!-- <div ng-message="email">Please enter a valid email address.</div> -->
           <div ng-message="minlength">Your email is too short.</div>
           <div ng-message="maxlength">Your email is too long</div>
         </div>

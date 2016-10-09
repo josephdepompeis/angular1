@@ -4,7 +4,7 @@
 
 
 
-{{mc.matchNotes}}
+{{mc.matchNotes.matchNotes}}
 <!-- {{ mc.createdMatch}} -->
 <!-- {{ mc.matchData}} -->
 <!-- {{ mc.currentMatch}} -->
@@ -28,7 +28,7 @@
       placeholder="Filter by" autofocus>
 
 </form> -->
-<ul ng-repeat="note in mc.matchNotes | filter: { match_id: mc.currentMatch.id} | orderBy: 'order' ">
+<ul ng-repeat="note in mc.matchNotes.matchNotes | filter: { match_id: mc.currentMatch.id}| orderBy: 'order' ">
   <li>{{note}}</li>
 </ul>
 </div>
