@@ -8,14 +8,20 @@
         controllerAs: 'fc'
     });
 
-    function FormController( newNoteService ) {
+    function FormController( newNoteService , matchNotesService ) {
+
+      this.latestNote = newNoteService.latestNote;
+
+
 
       this.dashboardLink = function(){
         window.location = "#/dashboard";
       }
 
 
-      this.latestNote = newNoteService.latestNote;
+
+
+
 
         this.submit = function (form) {
           console.log("yeahbitch")
@@ -32,6 +38,11 @@
             this.latestNote = newNoteService.latestNote;
             });
             this.latestNote = newNoteService.latestNote;
+            matchNotesService.getMatchNotes().then ( (data) => {
+              this.matchNotes = data;
+              console.log(this.matchNotes);
+
+            });
           }
         };
     }

@@ -9,19 +9,24 @@
     });
 
     function matchDisplayController( userLoginService, createMatchService, matchIndexService, matchNotesService, newNoteService  ) {
+      matchNotesService.getMatchNotes().then ( (data) => {
+        this.matchNotes = matchNotesService.matchNotes;
+      });
+
+
+
+
       this.loggedInUser = userLoginService.loggedInUser;
       this.createdMatch = createMatchService.createdMatch;
       this.currentMatch = matchIndexService.currentMatch;
-      this.matchNotes = [];
+      this.matchNotes = matchNotesService.matchNotes;
       this.latestNote = newNoteService.latestNote;
 
 
 
+      //
 
-      matchNotesService.getMatchNotes().then ( (data) => {
-        this.matchNotes = data;
-      });
-
+      //
 
 
 
