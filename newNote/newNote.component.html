@@ -1,8 +1,7 @@
 
+Match:{{fc.match}}
 <div class="container-fluid" ng-if='fc.latestNote.data == nil'>
-
   <form name="fc.userForm" novalidate>
-
     <div>
       Email:
       <input name="uNote" ng-model="fc.note" required ng-minlength="1" ng-maxlength="20">
@@ -11,25 +10,16 @@
           <!-- Only one message is displayed, order matters -->
           <div ng-message="required">Please enter an note.</div>
           <!-- <div ng-message="email">Please enter a valid email address.</div> -->
-          <div ng-message="minlength">Your email is too short.</div>
-          <div ng-message="maxlength">Your email is too long</div>
+          <div ng-message="minlength">Your note is too short.</div>
+          <div ng-message="maxlength">Your note is too long</div>
         </div>
       </div>
     </div>
     <div>
-      Password:
-      <input name="uPassword" type="password" ng-model="fc.password" required>
-      <div style="color: red" ng-show="fc.userForm.uPassword.$touched && fc.userForm.uPassword.$error.required">
-        Please enter a password.
-      </div>
-    </div>
-
     <button class="btn btn-primary" ng-disabled="fc.userForm.$invalid" type="submit" ng-click="fc.submit(fc.userForm)">Submit</button>
-
     <div class="container-fluid" ng-if="fc.userForm.$submitted && fc.latestNote.data == nil">
       something wasn't correct. Try Again.
     </div>
-
 
   </form>
   <!-- <pre ng-bind="fc.userForm | json"></pre> -->
